@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+	function process() {
+    	$("#mesg").html("processing");
+      
+        $.post("a.php", {"someNumber":Math.random()} 
+            , handleServerResponse);
+        }
+
+    function handleServerResponse(data, theStatus)  {
+ 		 if (theStatus == "success"){
+         	$("#mesg").html(data);
+         	  var arr = data.split('<a>');
+         	  var val;
+         	  var c = document.getElementById("myCanvas"); 
+         	  var ctx = c.getContext("2d");
+             
+         	  for(var i=0; i < arr.length ; i++) {
+                 val = arr[i].split(','); 
+                 ctx.fillStyle=val[0];
+                 ctx.fillRect(val[1],val[2], val[3], val[4]);
+                 
+              }
+         }
+     }
+
+
+
+</script>
+</head>
+<body>
+
+
+
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid  yellow"></canvas>
+<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+
+<button onclick="process()">Go</button><br>
+
+<div id="mesg"></div><p></p>
+
+
+
+
+
+</body></html>

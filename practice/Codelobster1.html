@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+
+<head>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+</script>
+<script>
+function myFunction() {
+    var x = $("[name='team']:checked").val();
+    $("#demo").html(x);
+}
+
+
+</script>
+</head>
+<body>Radio button:<br/>
+<input type="radio" name="team" value="RED" >Red</input><br/>
+<input type="radio" name="team" value="BLUE" checked>Blue</input>
+
+
+<p>Click the "Try it" button to find out whether the radio button is checked, or not.</p>
+
+
+<button onclick="myFunction()">Try it</button>
+
+
+<p id="demo"></p>
+
+</body>
+
+
+<head>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+
+
+</script>
+
+
+<script>
+
+
+function f1() {
+   var x = $("[name='carlist']").val();
+   $("#demo").html(x);}</script></head>
+
+
+<body>
+<button onclick="f1()">Select one the click this button</button><br/>
+<select name="carlist" >
+
+
+<option value="volvo">Volvo</option>
+
+
+<option value="saab">Saab</option>
+
+
+<option value="opel">Opel</option>
+
+
+<option value="audi">Audi</option>
+
+
+</select>
+
+
+<p></p>
+
+
+<div id="demo"></div>
+</body>

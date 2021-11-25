@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Array</title>
+	<script type="text/javascript">
+	var food = new Array(2);
+	food[0] = "pizza";
+	food[1] = "hamburger"; 
+
+	document.write("Original length: " + food.length + "<br />");
+	for (var x=0 ; x < food.length; x++) {
+		document.write("food[" + x + "] = " + food[x] + "<br/>");
+	}
+	
+	food.push("chips");
+	food.push("ice cream");
+	
+	document.write("<br/><br/>New length: " + food.length + "<br/>");
+	for (var x=0 ; x < food.length; x++) {
+		document.write("food[" + x + "] = " + food[x] + "<br/>");
+	}
+
+</script>
+</head>
+<body>
+</body>
+</html>

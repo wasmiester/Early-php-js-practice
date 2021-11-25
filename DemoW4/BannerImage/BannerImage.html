@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Banner Image</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<script type="text/javascript">
+/* <![CDATA[ */
+var curBanner="cycle1";
+function changeBanner() {
+     if (curBanner == "cycle2") {
+           document.images[0].src = "v500tec.gif";
+           curBanner = "cycle1";
+     }
+     else {
+           document.images[0].src = "showroom.gif";
+           curBanner = "cycle2";
+     }
+}
+/* ]]> */
+</script>
+<body onload="var begin=setInterval('changeBanner()',2000);">
+
+<p><img src="v500tec.gif" height="90px" width="700px"
+alt="Banner images" /></p>
+
+<p><img src="v500tec.gif" height="90px" width="700px"
+alt="Banner images" /></p>
+
+</body>
+</html>

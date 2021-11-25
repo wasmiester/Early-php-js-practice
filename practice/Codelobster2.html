@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title></title>
+<meta name="" content="">
+</head>
+<body>
+<script>
+	var turnx= true;
+	var row,col =0;
+	var horcheck=false;
+	
+	function askData(row,column){
+
+		if (turnx==true){
+		document.getElementById("cell"+row+column).innerHTML = "X";
+		turnx=false;}
+		else{document.getElementById("cell"+row+column).innerHTML = "O";
+		turnx=true;}
+		 
+		check();
+		}
+	function check(){
+		while(row!=3){
+		while(col!=3){
+			if(document.getElementById("cell"+row+col).innerHTML.equals("O")==true||document.getElementById("cell"+row+column).value == "X"){checkwin++}
+			col++;
+		}
+		row++;}
+		row,col,checkwin =0;
+		while(col!=3){
+		while(row!=3){
+			if(document.getElementById("cell"+row+col).value == "O"||document.getElementById("cell"+row+column).value == "X"){checkwin++;}
+			row++;
+		}
+		col++;}
+		row,col,checkwin =0;
+	}
+	function poop(){
+if (document.getElementById('r2').checked) {
+  document.getElementById("hh").innerHTML = "gg"
+}
+else if (document.getElementById('r1').checked) {
+  document.getElementById("hh").innerHTML = "gg"
+}}	
+</script>
+<table id="myTable" border="1" height="100" width="100">
+<tr>
+   	   <td id="cell00" onclick="askData(0,0)" ></td>
+	   <td id="cell01" onclick="askData(0,1)" ></td>
+	   <td id="cell02" onclick="askData(0,2)" ></td>
+</tr>
+<tr>
+	   <td id="cell10" onclick="askData(1,0)" ></td>
+	   <td id="cell11" onclick="askData(1,1)" ></td>
+	   <td id="cell12" onclick="askData(1,2)" ></td>
+</tr>
+<tr>
+	   <td id="cell20" onclick="askData(2,0)" ></td>
+	   <td id="cell21" onclick="askData(2,1)" ></td>
+	   <td id="cell22" onclick="askData(2,2)" ></td>
+</tr>
+</table>
+
+<input type="radio" id="r1" name="rate" value="Fixed Rate"> Fixed Rate
+
+<input type="radio" id="r2" name="rate" value="Variable Rate"> Variable Rate
+
+<input type="radio" id="r3" name="rate" value="Multi Rate"> Multi Rate 
+<button onclick="poop">ddssd</button>
+<div id="hh"></div> 
+<script>
+var turn=true
+
+</script>
+</body>
+</html>

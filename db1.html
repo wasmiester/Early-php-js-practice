@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+ <html>
+ <head><title>AJAX with PHP</title></head>
+
+
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+ <script>
+                function process() {
+                        $("#mesg").html("processing");
+                        var idVar = $("#id").val();
+                        $.post("db1.php", {"id": idVar,
+                             "someNumber":Math.random()}
+                        , handleServerResponse);
+                }
+
+                function handleServerResponse(data, theStatus)  {
+                        if (theStatus == "success")
+                             $("#result").html(data);
+                }
+        </script>
+
+ <body>
+        <label>ID: <input type=text id="id"></input></label><br/>
+        <button onclick="process()">Go</button><br/>
+        <div id="mesg"></div><p></p>
+
+        <table id="result" border=1>
+        </table>
+ </body>
+ </html>

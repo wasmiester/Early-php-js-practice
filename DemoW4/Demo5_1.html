@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> </title>
+<script>
+"use strict";
+function checkIt(phrase)
+{
+var enteredWord = ""; 
+	var char1 = ""; 
+	var charLast = ""; 
+	var charMiddle = ""; 
+	var wordLength = 0;
+	
+	enteredWord = document.getElementById(phrase).value;
+	document.getElementById('result').innerHTML = enteredWord;
+	
+	wordLength = enteredWord.length;
+	document.getElementById('word_size').innerHTML = wordLength;
+	
+	char1 = enteredWord.substr(0,1);
+	document.getElementById('first_char').innerHTML = char1;
+	
+	
+	charLast = enteredWord.substr((wordLength - 1),1);
+	document.getElementById('last_char').innerHTML = charLast;
+	
+	
+	charMiddle = enteredWord.substr(wordLength/2,1);
+	document.getElementById('the_middle').innerHTML = charMiddle;
+
+}
+</script>
+</head>
+
+<body>
+<table align="center"><tr><td><br />
+<h3> Enter a word or a phrase:</h3>
+	<p><input type="text" name="user_word" id="theWord" />
+	<input type="button" onclick="checkIt('theWord')" /></p>
+	<p>Word/Phrase information:<br />
+	You entered: <span  id= "result">&nbsp;</span> <br />
+	# of characters: <span  id="word_size">&nbsp;</span> <br />
+	1st character: <span  id="first_char">&nbsp;</span> <br />
+	last character: <span  id="last_char">&nbsp;</span> <br />
+	The middle character: <span  id="the_middle">&nbsp;</span> <br /></p>
+</td></tr></table>
+</body></html>

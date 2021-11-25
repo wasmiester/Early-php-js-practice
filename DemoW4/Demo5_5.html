@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Table and Array</title></head>
+<body>
+	
+<script>
+"use strict";
+
+var cells;
+function setup()
+{
+ 	cells = new Array(
+ 		[document.getElementById("cell00"),document.getElementById("cell01"), document.getElementById("cell02")],
+		[document.getElementById("cell10"),document.getElementById("cell11"), document.getElementById("cell12")],
+		[document.getElementById("cell20"),document.getElementById("cell21"), document.getElementById("cell22")]
+		); 
+
+}
+
+function askData(row,col) {
+	//cells[row][col].innerHTML = prompt("Enter a value:");
+       document.getElementById("cell"+row+col).innerHTML = prompt("Enter a value:");
+}
+</script>
+
+<body onload="setup()">
+<table id="myTable" border="1">
+<tr>
+   	   <td id="cell00" onclick="askData(0,0)" >cell 00</td>
+	   <td id="cell01" onclick="askData(0,1)" >cell 01</td>
+	   <td id="cell02" onclick="askData(0,2)" >cell 02</td>
+</tr>
+<tr>
+	   <td id="cell10" onclick="askData(1,0)" >cell 10 </td>
+	   <td id="cell11" onclick="askData(1,1)" >cell 11 </td>
+	   <td id="cell12" onclick="askData(1,2)" >cell 12 </td>
+</tr>
+<tr>
+	   <td id="cell20" onclick="askData(2,0)" >cell 20 </td>
+	   <td id="cell21" onclick="askData(2,1)" >cell 21 </td>
+	   <td id="cell22" onclick="askData(2,2)" >cell 22 </td>
+</tr>
+</table>
+</body>
+</html>
+
